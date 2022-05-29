@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.app {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    width: 100vw;
+    max-width: 1400px;
+    background-color: white;
+    margin: 3rem auto;
+    border-radius: 2rem;
+    height: calc(100vh - 6rem);
+    display: flex;
+    box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.43);
+    -webkit-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.43);
+    -moz-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.43);
 }
