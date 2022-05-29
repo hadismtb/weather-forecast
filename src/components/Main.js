@@ -1,7 +1,19 @@
-import React from 'react';
-import styles from "./Main.module.css"
+import React, {useEffect, useState} from 'react';
+import styles from "./Main.module.css";
+import axios from "axios";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchLocation} from "../redux/currentLocation/currentLocationAction";
 
 const Main = () => {
+    const dispatch = useDispatch();
+    const state = useSelector(state => state.locationState);
+    const {loading, city, country, error} = state;
+
+    useEffect(() => {
+        dispatch(fetchLocation())
+    }, [])
+
+
     return (
         <div className={styles.container}>
             <header className={styles.header}>
@@ -10,7 +22,13 @@ const Main = () => {
                     <span><i className="fas fa-map-marker-alt"></i></span>
                     <div className={styles.cityName}>
                         <p>Current Location</p>
-                        <p>Tehran, Iran</p>
+                        <p>{
+                            loading ?
+                                "loading..." :
+                                !error && !loading ?
+                                    `${city}, ${country}` :
+                                    city
+                        }</p>
                     </div>
                 </div>
             </header>
