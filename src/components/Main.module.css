@@ -1,0 +1,107 @@
+.container {
+    background: url("../assets/images/bg.jpg") no-repeat center center;
+    flex: 1;
+    background-size: cover;
+    padding: 2rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.header h1{
+    font-size: 25px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.44);
+    font-weight: 400;
+}
+
+.locationContainer {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0,.2);
+    padding: .5rem 1rem;
+    border-radius: .8rem;
+}
+
+.locationContainer i {
+    margin-right: .8rem;
+    font-size: 18px;
+}
+
+.cityName p:first-child {
+    font-size: 12px;
+}
+
+.cityName p:last-child {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.searchBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    color: white;
+}
+
+.searchBox h2 {
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.horizontalRow {
+    height: 5px;
+    background-color: white;
+    width: 12%;
+    border-radius: .5rem;
+    margin: 1.5rem 0;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+.inputContainer {
+    background-color: rgba(255, 255, 255, .3);
+    padding: .8rem 1rem;
+    border-radius: .5rem;
+    display: flex;
+}
+
+.inputContainer input, .inputContainer button {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+}
+
+.inputContainer input {
+    color: rgba(99, 110, 114,1.0);
+    width: 350px;
+    font-size: 15px;
+}
+.inputContainer input::placeholder {
+    color: rgba(45, 52, 54,1.0);
+}
+
+.inputContainer button {
+    border-left: 1px solid white;
+    padding-left: 1rem;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s all;
+}
+.inputContainer button:hover {
+    color: rgba(108, 92, 231,1.0);
+}
+
+.liveLocation {
+    margin-left: 1rem;
+    cursor: pointer;
+}
