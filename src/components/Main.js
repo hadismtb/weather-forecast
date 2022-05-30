@@ -8,6 +8,7 @@ const Main = () => {
     const dispatch = useDispatch();
     const state = useSelector(state => state.locationState);
     const {loading, city, country, error} = state;
+    const [cityName, setCityName] = useState("");
 
     useEffect(() => {
         dispatch(fetchLocation())
@@ -37,7 +38,12 @@ const Main = () => {
                 <div className={styles.horizontalRow}></div>
                 <form>
                     <div className={styles.inputContainer}>
-                        <input type="text" placeholder="Enter location"/>
+                        <input
+                            type="text"
+                            placeholder="Enter location"
+                            value={cityName}
+                            onChange={e => setCityName(e.target.value)}
+                        />
                         <button type="submit"><i className="fas fa-search"></i></button>
                     </div>
                     <span className={styles.liveLocation}>
