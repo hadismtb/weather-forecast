@@ -10,12 +10,13 @@ const weatherDataReducer = (state = initialState, action) => {
     switch (type) {
         case "FETCH_WEATHER_REQUEST":
             return {
-                ...state,
+                error: "",
+                data: [],
                 loading: true
             }
         case "FETCH_WEATHER_SUCCESS":
             return {
-                ...state,
+                error: "",
                 loading: false,
                 data: payload
             }
