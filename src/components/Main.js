@@ -26,6 +26,16 @@ const Main = () => {
         setCityName("")
     }
 
+    const handleClick = () => {
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+            const {latitude, longitude} = position.coords;
+            const url = `${BASE_URL}lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric&cnt=5&exclude=hourly,minutely`
+
+            dispatch(fetchWeather(url))
+        });
+    }
+
     return (
         <div className={styles.container}>
             <header className={styles.header}>
@@ -57,7 +67,10 @@ const Main = () => {
                         />
                         <button type="submit"><i className="fas fa-search"></i></button>
                     </div>
-                    <span className={styles.liveLocation}>
+                    <span
+                        className={styles.liveLocation}
+                        onClick={handleClick}
+                    >
                             <i className="fas fa-location-arrow"></i>
                     </span>
                 </form>
