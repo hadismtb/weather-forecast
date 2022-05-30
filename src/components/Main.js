@@ -3,8 +3,12 @@ import styles from "./Main.module.css";
 import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchLocation} from "../redux/currentLocation/currentLocationAction";
+import {fetchWeather} from "../redux/weatherData/weatherDataAction";
 
 const Main = () => {
+    const API_KEY = "65ab2c747b41b6ef08230971719b640f";
+    const BASE_URL = "https://api.openweathermap.org/data/2.5/forecast?";
+
     const dispatch = useDispatch();
     const state = useSelector(state => state.locationState);
     const {loading, city, country, error} = state;
@@ -14,6 +18,13 @@ const Main = () => {
         dispatch(fetchLocation())
     }, [])
 
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        const url = `${BASE_URL}q=${cityName}&appid=${API_KEY}&units=metric&cnt=5&exclude=hourly,minutely`;
+        dispatch(fetchWeather(url));
+        setCityName("")
+    }
 
     return (
         <div className={styles.container}>
@@ -36,7 +47,7 @@ const Main = () => {
             <div className={styles.searchBox}>
                 <h2>The Only Weather Forecast You Need</h2>
                 <div className={styles.horizontalRow}></div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className={styles.inputContainer}>
                         <input
                             type="text"
