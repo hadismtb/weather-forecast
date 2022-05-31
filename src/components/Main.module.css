@@ -1,6 +1,6 @@
 .container {
     background: url("../assets/images/bg.jpg") no-repeat center center;
-    flex: 1;
+    flex: 1.5;
     background-size: cover;
     padding: 2rem;
 }
