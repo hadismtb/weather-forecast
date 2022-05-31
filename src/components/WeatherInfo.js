@@ -1,5 +1,5 @@
 import React from 'react';
-import {useSelector, useDispatch} from "react-redux";
+import {useSelector} from "react-redux";
 
 //Styles
 import styles from "./WeatherInfo.module.css";
@@ -19,17 +19,19 @@ const WeatherInfo = () => {
         <div className={styles.container}>
             <Navbar/>
             {
-                data.length > 0 && !loading &&
+                data.cod == 200 &&
                     <CurrentWeather/>
             }
-            <div className={styles.messageContainer}>
-                {
-                    error && <h2>{error}</h2>
-                }
-                {
-                    loading && <img src={spinner} alt="loading" />
-                }
-            </div>
+            {
+                data.length === 0 && <div className={styles.messageContainer}>
+                    {
+                        error && <h2>{error}</h2>
+                    }
+                    {
+                        loading && <img src={spinner} alt="loading" />
+                    }
+                </div>
+            }
         </div>
     );
 };
