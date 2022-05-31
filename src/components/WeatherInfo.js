@@ -25,7 +25,15 @@ const WeatherInfo = () => {
                 (
                     <>
                         <CurrentWeather/>
-                        <FutureWeather/>
+                        <ul className={styles.daysContainer}>
+                            {
+                                days.map( (day, index) => {
+                                    if (index > 0) {
+                                        return ( <FutureWeather key={index} data={day}/>)
+                                    }
+                                })
+                            }
+                        </ul>
                     </>
                 )
             }
