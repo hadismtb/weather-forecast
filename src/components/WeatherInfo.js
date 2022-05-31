@@ -8,6 +8,9 @@ import styles from "./WeatherInfo.module.css";
 import Navbar from "./Navbar";
 import CurrentWeather from "./CurrentWeather";
 
+//IMAGES
+import spinner from "../assets/images/1496.gif"
+
 const WeatherInfo = () => {
     const weatherState = useSelector(state => state.weatherState);
     const {data, loading, error} = weatherState;
@@ -19,12 +22,14 @@ const WeatherInfo = () => {
                 data.length > 0 && !loading &&
                     <CurrentWeather/>
             }
-            {
-                error && <h2>{error}</h2>
-            }
-            {
-                loading && <h2>NO DATA</h2>
-            }
+            <div className={styles.messageContainer}>
+                {
+                    error && <h2>{error}</h2>
+                }
+                {
+                    loading && <img src={spinner} alt="loading" />
+                }
+            </div>
         </div>
     );
 };

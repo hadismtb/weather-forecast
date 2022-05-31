@@ -2,3 +2,14 @@
     flex: 1;
     padding: 2rem;
 }
+
+.messageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.messageContainer h2 {
+    color: darkgrey;
+}
