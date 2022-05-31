@@ -10,17 +10,24 @@ import CurrentWeather from "./CurrentWeather";
 
 //IMAGES
 import spinner from "../assets/images/1496.gif"
+import FutureWeather from "./FutureWeather";
 
 const WeatherInfo = () => {
     const weatherState = useSelector(state => state.weatherState);
     const {data, loading, error} = weatherState;
+    const days = data.list;
 
     return (
         <div className={styles.container}>
             <Navbar/>
             {
                 data.cod == 200 &&
-                    <CurrentWeather/>
+                (
+                    <>
+                        <CurrentWeather/>
+                        <FutureWeather/>
+                    </>
+                )
             }
             {
                 data.length === 0 && <div className={styles.messageContainer}>
