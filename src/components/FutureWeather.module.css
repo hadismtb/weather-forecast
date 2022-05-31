@@ -1,0 +1,31 @@
+.container {
+    box-shadow: 1px 1px 5px 0px rgba(125,125,125,0.4);
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(125,125,125,0.4);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(125,125,125,0.4);
+    border-radius: .5rem;
+    padding: .8rem 1.2rem;
+}
+
+.temp {
+    font-size: 1.3rem;
+}
+
+.temp span {
+    font-size: 1.1rem;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+}
+.status h4 {
+    color: #4b4b4b;
+}
+.status img {
+    width: 40px;
+}
+
+.date {
+    font-weight: 400;
+    font-size: .7rem;
+}
