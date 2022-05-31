@@ -22,7 +22,9 @@ const weatherDataReducer = (state = initialState, action) => {
             }
         case "FETCH_WEATHER_FAILURE":
             return {
-                error: payload
+                error: payload,
+                loading: false,
+                data: []
             }
         default: return state
     }

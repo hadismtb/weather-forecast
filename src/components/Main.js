@@ -25,6 +25,10 @@ const Main = () => {
         dispatch(fetchLocation());
     }, [])
 
+    useEffect(() => {
+        dispatch(fetchWeather(dispatch(fetchWeather(`${BASE_URL}q=${city}&appid=${API_KEY}&units=metric&cnt=5&exclude=hourly,minutely`))))
+    }, [city])
+
     const handleSubmit = e => {
         e.preventDefault();
 
