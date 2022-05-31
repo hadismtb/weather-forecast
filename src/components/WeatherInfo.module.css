@@ -13,3 +13,14 @@
 .messageContainer h2 {
     color: darkgrey;
 }
+
+.daysTitle {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+}
+
+.daysContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: .8rem;
+}

@@ -25,6 +25,7 @@ const WeatherInfo = () => {
                 (
                     <>
                         <CurrentWeather/>
+                        <h3 className={styles.daysTitle}>Hourly</h3>
                         <ul className={styles.daysContainer}>
                             {
                                 days.map( (day, index) => {
