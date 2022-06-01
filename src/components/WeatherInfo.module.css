@@ -24,3 +24,15 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: .8rem;
 }
+
+@media (max-width: 768px) {
+    .messageContainer {
+        margin-top: 5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+}

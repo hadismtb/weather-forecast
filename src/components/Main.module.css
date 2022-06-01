@@ -52,6 +52,7 @@
 .searchBox h2 {
     font-weight: 400;
     font-size: 28px;
+    text-align: center;
 }
 
 .horizontalRow {
@@ -109,4 +110,29 @@ form {
 
 .liveLocation:hover {
     transform: scale(1.2);
+}
+
+@media (max-width: 992px) {
+    .inputContainer input {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: 400px;
+        flex: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .inputContainer input {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
 }

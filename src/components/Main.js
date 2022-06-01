@@ -9,6 +9,7 @@ const Main = () => {
     const API_KEY = "65ab2c747b41b6ef08230971719b640f";
     const BASE_URL = "https://api.openweathermap.org/data/2.5/forecast?";
     const [searched, setSearched] = useState(false);
+    const [liveLocation, setLiveLocation] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -43,6 +44,7 @@ const Main = () => {
             const url = `${BASE_URL}lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric&cnt=5&exclude=hourly,minutely`;
 
             dispatch(fetchWeather(url));
+            setLiveLocation(true)
         });
     }
 
@@ -56,14 +58,14 @@ const Main = () => {
                         <p>Current Location</p>
                         <p>
                             {
-                                searched ?
+                                searched || liveLocation ?
                                     weatherLoading ?
                                         "loading..." :
                                             !weatherError ? `${data.city.name + ", " + data.city.country}` :
                                                 "Unknown" :
                                     ""
                             }
-                            {!searched ?
+                            {!searched && !liveLocation ?
                                 loading ?
                                     "loading..." :
                                     !error && !loading ?
